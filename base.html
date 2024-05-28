@@ -18,10 +18,33 @@
               <p>Precio base: $<span class="precio-inicial"></span> </p>
         
               <p>Cantidad:
-                <span class="cantidad">0</span>
-                <button 
+                <span id="suma" class="cantidad">0</span>
+                <button id="btn-1" onclick="
+                    span= document.querySelector('.cantidad')
+                    cantidad=Number(span.innerHTML)
+                    cantidad=cantidad+1
+                    span.innerHTML=cantidad
+                    precio_inicial=document.querySelector('.precio-inicial')
+                    total=document.querySelector('.valor-total')
+                    preciobase=Number(precio_inicial.innerHTML)
+                    tot=cantidad*preciobase
+                    total.innerHTML=tot
+                " 
                 >+</button>
-                <button
+                <button id="resta" onclick="
+                    span= document.querySelector('.cantidad')
+                    cantidad=Number(span.innerHTML)
+                    if(cantidad>0){
+                        cantidad=cantidad-1
+                    }
+                    span.innerHTML=cantidad
+                    precio_inicial=document.querySelector('.precio-inicial')
+                    total=document.querySelector('.valor-total')
+                    preciobase=Number(precio_inicial.innerHTML)
+                    tot=cantidad*preciobase
+                    total.innerHTML=tot
+                
+                "
                 >-</button>
               </p>
             </div>
@@ -30,7 +53,8 @@
     </section>
 
     <div class="total-section">
-        <p>Total a pagar: $<span class="valor-total"></span> </p>
+        <p>Total a pagar:</p> 
+        <p> $<span class="valor-total">0</span></p>
     </div>
 
     <script src="index.js">
